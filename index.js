@@ -19,6 +19,7 @@ const btn9_1 = document.getElementById("btn-9-1");
 const btn9_2 = document.getElementById("btn-9-2");
 const btn10_1 = document.getElementById("btn-10-1");
 const btn10_2 = document.getElementById("btn-10-2");
+const btn_reset = document.getElementById("reset");
 
 
 
@@ -36,6 +37,8 @@ const response8 = document.querySelector("#rep-8 > p");
 const response9 = document.querySelector("#rep-9 > p");
 const response10 = document.querySelector("#rep-10 > p");
 const scoreDiv = document.getElementById("Score");
+const lst_resp = [response1, response2, response3, response4, response5,
+    response6, response7, response8, response9, response10]
 
 let q1ans = false;
 let q2ans = false;
@@ -47,6 +50,7 @@ let q7ans = false;
 let q8ans = false;
 let q9ans = false;
 let q10ans = false;
+const lst_ans = [q1ans, q2ans, q3ans, q4ans, q5ans, q6ans, q7ans, q8ans, q9ans, q10ans]
 
 btn1_1.addEventListener("click",  () => {
     if (!q1ans) {
@@ -286,4 +290,14 @@ btn10_2.addEventListener("click",  () => {
     }
     q10ans = true;
     scoreDiv.innerHTML = `<h2>Score : ${score}/10</h2>`
+})
+
+btn_reset.addEventListener("click", () => {
+    score = 0;
+    for (let i = 0; i < 10; i++) {
+        lst_resp[i].classList.remove("show-response");
+        lst_resp[i].style.background = "black";
+        lst_ans[i] = false;
+    }
+    scoreDiv.innerHTML = `<h2>Score : ${score}/10</h2>`;
 })
