@@ -28,6 +28,7 @@ for (let i = 0; i < 20; i++) {
             } else {
                 score -= 1
                 alert("Merci de ne pas tricher !")
+                lst_resp[Math.round(i/2 - 0.1)].style.background = "red";
             }
         } else {
             lst_resp[Math.round(i/2 - 0.1)].classList.add("show-response");
@@ -35,6 +36,7 @@ for (let i = 0; i < 20; i++) {
             if (lst_ans[Math.round(i/2 - 0.1)] === true){
                 score -= 1
                 alert("Merci de ne pas tricher !")
+                lst_resp[Math.round(i/2 - 0.1)].style.background = "red";
             }
         }
         lst_ans[Math.round(i/2 - 0.1)] = true
